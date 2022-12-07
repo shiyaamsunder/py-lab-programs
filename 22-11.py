@@ -17,7 +17,7 @@ def series_2(n, x):
 def series_3(n):
     sum = 0
     for i in range(1, n+1):
-        sum +=((i * (i + 1))/2)
+        sum +=((i * (i + 1))//2)
     return sum
 
 def fact(n):
@@ -35,7 +35,6 @@ def series_4(n, x):
             sum-= (x ** i)/fact(i)
     return sum
 
-
 #b
 
 def enter_words():
@@ -44,7 +43,6 @@ def enter_words():
         while(len(word) < 6):
            word = input("Enter a word with more than 5 characters: ")
         print("Entered word is : ",word)
-           
 
 #c
 
@@ -66,6 +64,10 @@ def ebill(units):
     else:
         return price_tier5
 
+
+#units = float(input("Enter the units: "))
+#charge = ebill(units)
+#print("Total charges:", charge)
 #d
 
 from datetime import datetime
@@ -97,12 +99,12 @@ def parking(entry_time, exit_time, v_type):
         else:
             rate=30
     elif v_type==2:
-        if hh < 2 and mm <=59:
+        if hh <= 2 and mm <=59:
             rate=10
         else:
             rate=20
     elif v_type==3:
-        if hh < 2 and mm <=59:
+        if hh <= 2 and mm <=59:
             rate=5
         else:
             rate=10
@@ -251,21 +253,15 @@ def pattern_i4(length):
         print("")
 
 def pattern_i5(length):
-    c=0
     for i in range(0, length):
-        for j in range(c+1, 0, -1):
+        for j in range(i+1, 0, -1):
             print(j, end="")
-        for k in range(1, c+1):
-            print(k+1, end="")
+        for k in range(2, i+2):
+            print(k, end="")
                 
         print("")
-        c+=1
 
-#pattern_i(12)
-#pattern_i2(10)
-#pattern_i3(10)
-#pattern_i4(6)
-#pattern_i5(5)
+pattern_i5(3)
 
 def seq1(n):
     for i in range(1, n+1):
