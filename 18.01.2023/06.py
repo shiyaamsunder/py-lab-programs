@@ -1,15 +1,15 @@
 import re
-f1 = open("./files/file6out.txt", "w")
+f1 = open("./files/file6in.txt", "r")
 
-data = "This data contains some data. every character after the fullstop is captialised. and the numbers like 5 are bracketed.\n"
+lines = f1.read()
+def replace_func(match):
+    if match.group(1) is not None:
+        return "[" + str(match.group(1)) + "]"
+    if match.group(2) is not None:
+        return match.group(2).upper()
+x = re.sub(r"([0-9])|(\. \w)", replace_func, lines)
 
-
-def replace_func(m):
-    return f"{m.expand(r'\1GAR')}"
-
-x = re.sub(r"([0-9])|(\.)", replace_func, data)
-
-#print(x)
+print(x)
 
 
 f1.close()
