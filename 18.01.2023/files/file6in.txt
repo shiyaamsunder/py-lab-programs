@@ -1,0 +1,1 @@
+This data contains some lines. after every fullstop the first letter is captialized. and all the numbers like 1 2 3 are placed inside brackets
